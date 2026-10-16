@@ -1,0 +1,38 @@
+[
+  {
+    "Name": "M2XLibrary",
+    "Version": "*",
+    "DistributorName": "Thorsten Brach",
+    "Namespace": null
+  },
+  {
+    "Name": "M2XLibrarySysDep",
+    "Version": "0.0.0.1",
+    "DistributorName": "Thorsten Brach",
+    "Namespace": null
+  },
+  {
+    "Name": "Tc2_Standard",
+    "Version": "*",
+    "DistributorName": "Beckhoff Automation GmbH",
+    "Namespace": null
+  },
+  {
+    "Name": "Tc2_System",
+    "Version": "*",
+    "DistributorName": "Beckhoff Automation GmbH",
+    "Namespace": null
+  },
+  {
+    "Name": "Tc3_Module",
+    "Version": "*",
+    "DistributorName": "Beckhoff Automation GmbH",
+    "Namespace": null
+  },
+  {
+    "Name": "TcUnit",
+    "Version": "*",
+    "DistributorName": "www.tcunit.org",
+    "Namespace": null
+  }
+]
