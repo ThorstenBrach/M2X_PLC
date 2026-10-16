@@ -1,0 +1,1822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.13.21" creationDateTime="2026-10-16T20:01:01.8851099" />
+  <contentHeader name="M2XLibrarySysDep_Tc" modificationDateTime="2026-10-16T20:01:01.8896799">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/application" handleUnknown="implementation">
+      <resource name="M2XLibrarySysDep_Tc">
+        <task name="PlcTask" interval="PT0S" priority="20">
+          <pouInstance name="MAIN" typeName="">
+            <documentation>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml" />
+            </documentation>
+          </pouInstance>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/tasksettings" handleUnknown="implementation">
+              <TaskSettings KindOfTask="Cyclic" Interval="2000" IntervalUnit="us">
+                <Watchdog Enabled="false" TimeUnit="ms" />
+              </TaskSettings>
+            </data>
+            <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+              <ObjectId>b5b1e631-689a-4ed2-b042-93db8e5f58a7</ObjectId>
+            </data>
+          </addData>
+        </task>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/datatype" handleUnknown="implementation">
+            <dataType name="SysDepMqttQoS">
+              <baseType>
+                <enum>
+                  <values>
+                    <value name="AT_MOST_ONCE" value="0" />
+                    <value name="AT_LEAST_ONCE" value="1" />
+                    <value name="EXACTLY_ONCE" value="2" />
+                  </values>
+                </enum>
+              </baseType>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/enumvaluedocumentation" handleUnknown="implementation">
+                  <EnumValueDocumentation>
+                    <EnumValue>
+                      <Name>AT_MOST_ONCE</Name>
+                      <Documentation>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> QoS 0</xhtml>
+                      </Documentation>
+                    </EnumValue>
+                    <EnumValue>
+                      <Name>AT_LEAST_ONCE</Name>
+                      <Documentation>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> QoS 1</xhtml>
+                      </Documentation>
+                    </EnumValue>
+                    <EnumValue>
+                      <Name>EXACTLY_ONCE</Name>
+                      <Documentation>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml"> QoS 2</xhtml>
+                      </Documentation>
+                    </EnumValue>
+                  </EnumValueDocumentation>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="qualified_only" Value="" />
+                  </Attributes>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">{attribute 'qualified_only'}
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepMqttQoS
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    MQTT quality of service
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+/// MQTT quality of service
+TYPE SysDepMqttQoS :
+(
+  /// QoS 0
+  AT_MOST_ONCE  := 0,
+  /// QoS 1
+  AT_LEAST_ONCE := 1,
+  /// QoS 2
+  EXACTLY_ONCE  := 2
+);
+END_TYPE
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>5f705a6c-ac5d-4ff7-967b-f26762cfc19f</ObjectId>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> MQTT quality of service</xhtml>
+              </documentation>
+            </dataType>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/datatype" handleUnknown="implementation">
+            <dataType name="SysDepDateTime">
+              <baseType>
+                <struct>
+                  <variable name="Year">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Year</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Month">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Month 1..12</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Day">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Day 1..31</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Hour">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Hour 0..23</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Minute">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Minute 0..59</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Second">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Second 0..59</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Millisecond">
+                    <type>
+                      <UINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Millisecond 0..999</xhtml>
+                    </documentation>
+                  </variable>
+                </struct>
+              </baseType>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepDateTime
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    Date and time (UTC) of the system dependencies
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+/// Date and time (UTC) of the system dependencies
+TYPE SysDepDateTime :
+STRUCT
+  /// Year
+  Year        : UINT;
+  /// Month 1..12
+  Month       : UINT;
+  /// Day 1..31
+  Day         : UINT;
+  /// Hour 0..23
+  Hour        : UINT;
+  /// Minute 0..59
+  Minute      : UINT;
+  /// Second 0..59
+  Second      : UINT;
+  /// Millisecond 0..999
+  Millisecond : UINT;
+END_STRUCT
+END_TYPE
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>8e0612ab-37aa-4fc2-8aa2-d7c123ebb4eb</ObjectId>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Date and time (UTC) of the system dependencies</xhtml>
+              </documentation>
+            </dataType>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/datatype" handleUnknown="implementation">
+            <dataType name="SysDepMqttConfig">
+              <baseType>
+                <struct>
+                  <variable name="HostName">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'127.0.0.1'" />
+                    </initialValue>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Host name or IP address of the broker</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Port">
+                    <type>
+                      <UINT />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="1883" />
+                    </initialValue>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Port of the broker</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="ClientId">
+                    <type>
+                      <string length="64" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client id (unique per connection)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="UserName">
+                    <type>
+                      <string length="64" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> User name (optional)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Password">
+                    <type>
+                      <string length="64" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Password (optional)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="KeepAlive">
+                    <type>
+                      <UINT />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="60" />
+                    </initialValue>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Keep alive in seconds</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TlsEnabled">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Use TLS</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TlsCaFile">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> CA file</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TlsCertFile">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client certificate file</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TlsKeyFile">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client key file</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TlsKeyPassword">
+                    <type>
+                      <string length="64" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Password of the client key</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TlsNoServerCertCheck">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Do not check the server certificate</xhtml>
+                    </documentation>
+                  </variable>
+                </struct>
+              </baseType>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepMqttConfig
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    Configuration of the MQTT client
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+/// Configuration of the MQTT client
+TYPE SysDepMqttConfig :
+STRUCT
+  /// Host name or IP address of the broker
+  HostName             : STRING(255) := '127.0.0.1';
+  /// Port of the broker
+  Port                 : UINT := 1883;
+  /// Client id (unique per connection)
+  ClientId             : STRING(64);
+  /// User name (optional)
+  UserName             : STRING(64);
+  /// Password (optional)
+  Password             : STRING(64);
+  /// Keep alive in seconds
+  KeepAlive            : UINT := 60;
+  /// Use TLS
+  TlsEnabled           : BOOL;
+  /// CA file
+  TlsCaFile            : STRING(255);
+  /// Client certificate file
+  TlsCertFile          : STRING(255);
+  /// Client key file
+  TlsKeyFile           : STRING(255);
+  /// Password of the client key
+  TlsKeyPassword       : STRING(64);
+  /// Do not check the server certificate
+  TlsNoServerCertCheck : BOOL;
+END_STRUCT
+END_TYPE
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>a1568006-b183-4a5b-9aa8-60dda0a37fef</ObjectId>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Configuration of the MQTT client</xhtml>
+              </documentation>
+            </dataType>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="MAIN" pouType="program">
+              <interface>
+                <localVars>
+                  <variable name="JsonTests">
+                    <type>
+                      <derived name="JsonTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> JSON writer/parser and core functions</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="MockTransportTests">
+                    <type>
+                      <derived name="MockTransportTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Mock broker and mock transport</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="LhsTests">
+                    <type>
+                      <derived name="LhsTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Load handling station server against clients</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="DoorTests">
+                    <type>
+                      <derived name="DoorTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Door server against clients</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="SignalingDeviceTests">
+                    <type>
+                      <derived name="SignalingDeviceTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Signaling device server against a client</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="ChargingDeviceTests">
+                    <type>
+                      <derived name="ChargingDeviceTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Charging device server against a client</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="ElevatorTests">
+                    <type>
+                      <derived name="ElevatorTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Elevator group server against clients</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TransportOrderTests">
+                    <type>
+                      <derived name="TransportOrderTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Transport order receiver against a sender</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="MqttLoopbackTests">
+                    <type>
+                      <derived name="MqttLoopbackTestFB" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> LHS over a real MQTT broker</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="CycleCount">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Cycle counter (diagnosis)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="AllFinished">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> All suites are finished</xhtml>
+                    </documentation>
+                  </variable>
+                </localVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  CycleCount := CycleCount + 1;
+
+  // Run all TcUnit test suites
+  TcUnit.RUN();
+
+  // Diagnosis for ADS: all suites finished
+  AllFinished := JsonTests.AreAllTestsFinished()            AND MockTransportTests.AreAllTestsFinished()  AND
+                 LhsTests.AreAllTestsFinished()             AND DoorTests.AreAllTestsFinished()           AND
+                 SignalingDeviceTests.AreAllTestsFinished() AND ChargingDeviceTests.AreAllTestsFinished() AND
+                 ElevatorTests.AreAllTestsFinished()        AND TransportOrderTests.AreAllTestsFinished() AND
+                 MqttLoopbackTests.AreAllTestsFinished();
+</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">PROGRAM MAIN
+VAR
+  /// JSON writer/parser and core functions
+  JsonTests            : JsonTestFB;
+  /// Mock broker and mock transport
+  MockTransportTests   : MockTransportTestFB;
+  /// Load handling station server against clients
+  LhsTests             : LhsTestFB;
+  /// Door server against clients
+  DoorTests            : DoorTestFB;
+  /// Signaling device server against a client
+  SignalingDeviceTests : SignalingDeviceTestFB;
+  /// Charging device server against a client
+  ChargingDeviceTests  : ChargingDeviceTestFB;
+  /// Elevator group server against clients
+  ElevatorTests        : ElevatorTestFB;
+  /// Transport order receiver against a sender
+  TransportOrderTests  : TransportOrderTestFB;
+  /// LHS over a real MQTT broker
+  MqttLoopbackTests    : MqttLoopbackTestFB;
+  /// Cycle counter (diagnosis)
+  CycleCount           : UDINT;
+  /// All suites are finished
+  AllFinished          : BOOL;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>297cfea3-98cc-581f-9cbf-5a894e6a3c5e</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepMemCmp" pouType="function">
+              <interface>
+                <returnType>
+                  <DINT />
+                </returnType>
+                <inputVars>
+                  <variable name="pData1">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to 1st memory area</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="pData2">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to 2nd memory area</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="DataLen">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Amount of bytes to be compared</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent implementation of the memory compare function (0 = equal)</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysDepMemCmp := MEMCMP(pBuf1 := pData1, pBuf2 := pData2, n := DataLen);</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent implementation of the memory compare function (0 = equal)
+FUNCTION SysDepMemCmp : DINT
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepMemCmp
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent implementation of the memory compare function (0 = equal)
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR_INPUT
+  /// Pointer to 1st memory area
+  pData1  : POINTER TO BYTE;
+  /// Pointer to 2nd memory area
+  pData2  : POINTER TO BYTE;
+  /// Amount of bytes to be compared
+  DataLen : UDINT;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>85479531-d990-489d-bea4-056aa3268705</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepMemCpy" pouType="function">
+              <interface>
+                <returnType>
+                  <UDINT />
+                </returnType>
+                <inputVars>
+                  <variable name="pDest">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to memory address to be copied to (target)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="pSrc">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to memory address to be copied from (source)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="DataLen">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Amount of bytes to be copied</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent implementation of the memory copy function</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysDepMemCpy := MEMCPY(destAddr := pDest, srcAddr := pSrc, n := DataLen);</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent implementation of the memory copy function
+FUNCTION SysDepMemCpy : UDINT
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepMemCpy
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent implementation of the memory copy function
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR_INPUT
+  /// Pointer to memory address to be copied to (target)
+  pDest   : POINTER TO BYTE;
+  /// Pointer to memory address to be copied from (source)
+  pSrc    : POINTER TO BYTE;
+  /// Amount of bytes to be copied
+  DataLen : UDINT;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>961b76b6-f030-4fb0-bd70-63bd7f2b018b</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepMemSet" pouType="function">
+              <interface>
+                <returnType>
+                  <UDINT />
+                </returnType>
+                <inputVars>
+                  <variable name="pDest">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to memory address to be filled (target)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Value">
+                    <type>
+                      <BYTE />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Value with which the memory is initialized</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="DataLen">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Amount of bytes to be initialized</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent implementation of the memory set function</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysDepMemSet := MEMSET(destAddr := pDest, fillByte := Value, n := DataLen);</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent implementation of the memory set function
+FUNCTION SysDepMemSet : UDINT
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepMemSet
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent implementation of the memory set function
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR_INPUT
+  /// Pointer to memory address to be filled (target)
+  pDest   : POINTER TO BYTE;
+  /// Value with which the memory is initialized
+  Value   : BYTE;
+  /// Amount of bytes to be initialized
+  DataLen : UDINT;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>83b2a86d-46f1-41d9-a0df-9124beffa8e6</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepMqttClientFB" pouType="functionBlock">
+              <interface>
+                <inputVars>
+                  <variable name="Enable">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Connect to the broker</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Config">
+                    <type>
+                      <derived name="SysDepMqttConfig" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client configuration (read when Enable becomes TRUE)</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <outputVars>
+                  <variable name="Connected">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client is connected to the broker</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Error">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client reports an error</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="ErrorId">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Error code of the platform</xhtml>
+                    </documentation>
+                  </variable>
+                </outputVars>
+                <localVars>
+                  <variable name="_client">
+                    <type>
+                      <derived name="FB_IotMqttClient" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> MQTT client of Tc3_IotBase</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="_queue">
+                    <type>
+                      <derived name="FB_IotMqttMessageQueue" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Queue for received messages</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="_message">
+                    <type>
+                      <derived name="FB_IotMqttMessage" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Message read from the queue</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="_configured">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Configuration was copied into the client</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="_willPayload">
+                    <type>
+                      <array>
+                        <dimension lower="0" upper="1023" />
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </array>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload of the last will (must stay valid while connected)</xhtml>
+                    </documentation>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent MQTT client (TwinCAT: Tc3_IotBase, TF6701)</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  // Copy the configuration while not connected
+  IF ( NOT _configured )
+  THEN
+   _client.sClientId     := Config.ClientId;
+   _client.sHostName     := Config.HostName;
+   _client.nHostPort     := Config.Port;
+   _client.nKeepAlive    := Config.KeepAlive;
+   _client.sUserName     := Config.UserName;
+   _client.sUserPassword := Config.Password;
+
+    IF ( Config.TlsEnabled )
+    THEN
+     _client.stTLS.sCA                := Config.TlsCaFile;
+     _client.stTLS.sCert              := Config.TlsCertFile;
+     _client.stTLS.sKeyFile           := Config.TlsKeyFile;
+     _client.stTLS.sKeyPwd            := Config.TlsKeyPassword;
+     _client.stTLS.bNoServerCertCheck := Config.TlsNoServerCertCheck;
+    END_IF
+
+   _client.ipMessageQueue := _queue;
+   _configured            := TRUE;
+  END_IF
+
+ _client.Execute(bConnect := Enable);
+
+  Connected := _client.bConnected;
+  Error     := _client.bError;
+  ErrorId   := DINT_TO_UDINT(_client.hrErrorCode);
+
+  // Read the configuration again after a disconnect
+  IF (( NOT Enable ) AND ( NOT Connected ))
+  THEN
+   _configured := FALSE;
+  END_IF</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                  <Method name="Publish" ObjectId="c7ba58d7-65da-45a9-b5d8-6aa307fb4669">
+                    <interface>
+                      <returnType>
+                        <BOOL />
+                      </returnType>
+                      <inputVars>
+                        <variable name="Topic">
+                          <type>
+                            <string length="255" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Topic</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="pPayload">
+                          <type>
+                            <pointer>
+                              <baseType>
+                                <BYTE />
+                              </baseType>
+                            </pointer>
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="PayloadLength">
+                          <type>
+                            <UDINT />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Length of the payload</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="QoS">
+                          <type>
+                            <derived name="SysDepMqttQoS" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Quality of service</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="RetainFlag">
+                          <type>
+                            <BOOL />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Retain flag</xhtml>
+                          </documentation>
+                        </variable>
+                      </inputVars>
+                    </interface>
+                    <body>
+                      <ST>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml">  Publish := _client.Publish(sTopic       := Topic,
+                             pPayload     := pPayload,
+                             nPayloadSize := PayloadLength,
+                             eQoS         := ToTcQoS(QoS),
+                             bRetain      := RetainFlag,
+                             bQueue       := FALSE);</xhtml>
+                      </ST>
+                    </body>
+                    <InterfaceAsPlainText>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD Publish : BOOL
+/// Publishes a message
+VAR_INPUT
+  /// Topic
+  Topic         : STRING(255);
+  /// Payload
+  pPayload      : POINTER TO BYTE;
+  /// Length of the payload
+  PayloadLength : UDINT;
+  /// Quality of service
+  QoS           : SysDepMqttQoS;
+  /// Retain flag
+  RetainFlag        : BOOL;
+END_VAR
+</xhtml>
+                    </InterfaceAsPlainText>
+                    <addData />
+                  </Method>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                  <Method name="Receive" ObjectId="0732a79d-3ba0-4b6e-bf55-7ca05b7388a8">
+                    <interface>
+                      <returnType>
+                        <BOOL />
+                      </returnType>
+                      <inputVars>
+                        <variable name="pTopic">
+                          <type>
+                            <pointer>
+                              <baseType>
+                                <BYTE />
+                              </baseType>
+                            </pointer>
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Buffer for the topic (null-terminated string)</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="TopicSize">
+                          <type>
+                            <UDINT />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Size of the topic buffer in bytes</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="pPayload">
+                          <type>
+                            <pointer>
+                              <baseType>
+                                <BYTE />
+                              </baseType>
+                            </pointer>
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Buffer for the payload</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="PayloadSize">
+                          <type>
+                            <UDINT />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Size of the payload buffer in bytes</xhtml>
+                          </documentation>
+                        </variable>
+                      </inputVars>
+                      <inOutVars>
+                        <variable name="PayloadLength">
+                          <type>
+                            <UDINT />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Length of the received payload</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="Oversized">
+                          <type>
+                            <BOOL />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload did not fit into the buffer</xhtml>
+                          </documentation>
+                        </variable>
+                      </inOutVars>
+                      <localVars>
+                        <variable name="_topicLength">
+                          <type>
+                            <UDINT />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Number of topic bytes to copy</xhtml>
+                          </documentation>
+                        </variable>
+                      </localVars>
+                    </interface>
+                    <body>
+                      <ST>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml">  IF ( _queue.nQueuedMessages = 0 )
+  THEN
+    RETURN;
+  END_IF
+
+  IF ( NOT _queue.Dequeue(fbMessage := _message) )
+  THEN
+    RETURN;
+  END_IF
+
+  // Copy topic and terminate it
+ _topicLength := MIN(UINT_TO_UDINT(_message.nTopicSize), TopicSize - 1);
+  MEMCPY(destAddr := pTopic, srcAddr := _message.pTopic, n := _topicLength);
+  pTopic[_topicLength] := 0;
+
+  // Copy payload
+  IF ( _message.nPayloadSize &gt; PayloadSize )
+  THEN
+    Oversized     := TRUE;
+    PayloadLength := 0;
+  ELSE
+    Oversized     := FALSE;
+    PayloadLength := _message.nPayloadSize;
+    MEMCPY(destAddr := pPayload, srcAddr := _message.pPayload, n := PayloadLength);
+  END_IF
+
+  Receive := TRUE;</xhtml>
+                      </ST>
+                    </body>
+                    <InterfaceAsPlainText>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD Receive : BOOL
+/// Reads the next received message (FALSE if none)
+VAR_INPUT
+  /// Buffer for the topic (null-terminated string)
+  pTopic      : POINTER TO BYTE;
+  /// Size of the topic buffer in bytes
+  TopicSize   : UDINT;
+  /// Buffer for the payload
+  pPayload    : POINTER TO BYTE;
+  /// Size of the payload buffer in bytes
+  PayloadSize : UDINT;
+END_VAR
+VAR_IN_OUT
+  /// Length of the received payload
+  PayloadLength : UDINT;
+  /// Payload did not fit into the buffer
+  Oversized     : BOOL;
+END_VAR
+VAR
+  /// Number of topic bytes to copy
+ _topicLength : UDINT;
+END_VAR
+</xhtml>
+                    </InterfaceAsPlainText>
+                    <addData />
+                  </Method>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                  <Method name="SetLastWill" ObjectId="a044dec1-45a6-404c-8779-c9fdf5e640f6">
+                    <interface>
+                      <returnType>
+                        <BOOL />
+                      </returnType>
+                      <inputVars>
+                        <variable name="Topic">
+                          <type>
+                            <string length="255" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Topic of the last will</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="pPayload">
+                          <type>
+                            <pointer>
+                              <baseType>
+                                <BYTE />
+                              </baseType>
+                            </pointer>
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload of the last will</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="PayloadLength">
+                          <type>
+                            <UDINT />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Length of the payload</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="QoS">
+                          <type>
+                            <derived name="SysDepMqttQoS" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Quality of service</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="RetainFlag">
+                          <type>
+                            <BOOL />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Retain flag</xhtml>
+                          </documentation>
+                        </variable>
+                      </inputVars>
+                    </interface>
+                    <body>
+                      <ST>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml">  IF ( PayloadLength &gt; SIZEOF(_willPayload) )
+  THEN
+    RETURN;
+  END_IF
+
+  MEMCPY(destAddr := ADR(_willPayload), srcAddr := pPayload, n := PayloadLength);
+ _client.stWill.sTopic       := Topic;
+ _client.stWill.pPayload     := ADR(_willPayload);
+ _client.stWill.nPayloadSize := PayloadLength;
+ _client.stWill.eQoS         := ToTcQoS(QoS);
+ _client.stWill.bRetain      := RetainFlag;
+
+  SetLastWill := TRUE;</xhtml>
+                      </ST>
+                    </body>
+                    <InterfaceAsPlainText>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD SetLastWill : BOOL
+/// Sets the last will (used at the next connect)
+VAR_INPUT
+  /// Topic of the last will
+  Topic         : STRING(255);
+  /// Payload of the last will
+  pPayload      : POINTER TO BYTE;
+  /// Length of the payload
+  PayloadLength : UDINT;
+  /// Quality of service
+  QoS           : SysDepMqttQoS;
+  /// Retain flag
+  RetainFlag        : BOOL;
+END_VAR
+</xhtml>
+                    </InterfaceAsPlainText>
+                    <addData />
+                  </Method>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                  <Method name="Subscribe" ObjectId="b6a323f4-58c3-43e3-948a-5bac40402e4d">
+                    <interface>
+                      <returnType>
+                        <BOOL />
+                      </returnType>
+                      <inputVars>
+                        <variable name="Topic">
+                          <type>
+                            <string length="255" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Topic filter</xhtml>
+                          </documentation>
+                        </variable>
+                        <variable name="QoS">
+                          <type>
+                            <derived name="SysDepMqttQoS" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Quality of service</xhtml>
+                          </documentation>
+                        </variable>
+                      </inputVars>
+                    </interface>
+                    <body>
+                      <ST>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml">  Subscribe := _client.Subscribe(sTopic := Topic, eQoS := ToTcQoS(QoS));</xhtml>
+                      </ST>
+                    </body>
+                    <InterfaceAsPlainText>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD Subscribe : BOOL
+/// Subscribes to a topic
+VAR_INPUT
+  /// Topic filter
+  Topic : STRING(255);
+  /// Quality of service
+  QoS   : SysDepMqttQoS;
+END_VAR
+</xhtml>
+                    </InterfaceAsPlainText>
+                    <addData />
+                  </Method>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+                  <Method name="ToTcQoS" ObjectId="c4b3e2d2-18ac-46cb-93c2-684e4b6c48dd">
+                    <interface>
+                      <returnType>
+                        <derived name="TcIotMqttQos" />
+                      </returnType>
+                      <inputVars>
+                        <variable name="QoS">
+                          <type>
+                            <derived name="SysDepMqttQoS" />
+                          </type>
+                          <documentation>
+                            <xhtml xmlns="http://www.w3.org/1999/xhtml"> Neutral QoS</xhtml>
+                          </documentation>
+                        </variable>
+                      </inputVars>
+                      <addData>
+                        <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                          <AccessModifiers Private="true" />
+                        </data>
+                      </addData>
+                    </interface>
+                    <body>
+                      <ST>
+                        <xhtml xmlns="http://www.w3.org/1999/xhtml">  CASE QoS OF
+    SysDepMqttQoS.AT_LEAST_ONCE:
+      ToTcQoS := TcIotMqttQos.AtLeastOnceDelivery;
+    SysDepMqttQoS.EXACTLY_ONCE:
+      ToTcQoS := TcIotMqttQos.ExactlyOnceDelivery;
+  ELSE
+    ToTcQoS := TcIotMqttQos.AtMostOnceDelivery;
+  END_CASE</xhtml>
+                      </ST>
+                    </body>
+                    <InterfaceAsPlainText>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD PRIVATE ToTcQoS : TcIotMqttQos
+/// Converts the neutral QoS into the TwinCAT QoS
+VAR_INPUT
+  /// Neutral QoS
+  QoS : SysDepMqttQoS;
+END_VAR
+</xhtml>
+                    </InterfaceAsPlainText>
+                    <addData />
+                  </Method>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent MQTT client (TwinCAT: Tc3_IotBase, TF6701)
+FUNCTION_BLOCK SysDepMqttClientFB
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepMqttClientFB
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent MQTT client (TwinCAT: Tc3_IotBase, TF6701)
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR_INPUT
+  /// Connect to the broker
+  Enable : BOOL;
+  /// Client configuration (read when Enable becomes TRUE)
+  Config : SysDepMqttConfig;
+END_VAR
+VAR_OUTPUT
+  /// Client is connected to the broker
+  Connected : BOOL;
+  /// Client reports an error
+  Error     : BOOL;
+  /// Error code of the platform
+  ErrorId   : UDINT;
+END_VAR
+VAR
+  /// MQTT client of Tc3_IotBase
+ _client      : FB_IotMqttClient;
+  /// Queue for received messages
+ _queue       : FB_IotMqttMessageQueue;
+  /// Message read from the queue
+ _message     : FB_IotMqttMessage;
+  /// Configuration was copied into the client
+ _configured  : BOOL;
+  /// Payload of the last will (must stay valid while connected)
+ _willPayload : ARRAY [0..1023] OF BYTE;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>d8ed7fb2-c50a-48b2-8ede-6b21546619d0</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepIsValidLReal" pouType="function">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Value">
+                    <type>
+                      <LREAL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Value to check</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent check whether an LREAL is a finite number</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysDepIsValidLReal := IsFinite(F_LREAL(Value));</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent check whether an LREAL is a finite number
+FUNCTION SysDepIsValidLReal : BOOL
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepIsValidLReal
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent check whether an LREAL is a finite number
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR_INPUT
+  /// Value to check
+  Value : LREAL;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>495aa123-aa17-4b19-9fcb-696564973491</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepGetSeed" pouType="function">
+              <interface>
+                <returnType>
+                  <UDINT />
+                </returnType>
+                <localVars>
+                  <variable name="_now">
+                    <type>
+                      <ULINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> System time in 100 ns</xhtml>
+                    </documentation>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent seed for the random number generator</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> _now           := F_GetSystemTime();
+  SysDepGetSeed := ULINT_TO_UDINT(_now) XOR ULINT_TO_UDINT(SHR(_now, 32));</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent seed for the random number generator
+FUNCTION SysDepGetSeed : UDINT
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepGetSeed
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent seed for the random number generator
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR
+  /// System time in 100 ns
+ _now : ULINT;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>09b00219-5ee0-4ec0-aee8-72aff5a0da20</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/pou" handleUnknown="implementation">
+            <pou name="SysDepGetUtcTime" pouType="function">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inOutVars>
+                  <variable name="DateTime">
+                    <type>
+                      <derived name="SysDepDateTime" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Current UTC date and time</xhtml>
+                    </documentation>
+                  </variable>
+                </inOutVars>
+                <localVars>
+                  <variable name="_now">
+                    <type>
+                      <ULINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> System time in 100 ns since 1601-01-01 (UTC)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="_fileTime">
+                    <type>
+                      <derived name="T_FILETIME" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> File time</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="_time">
+                    <type>
+                      <derived name="TIMESTRUCT" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> System time structure</xhtml>
+                    </documentation>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent reading of the current UTC date and time</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> _now                     := F_GetSystemTime();
+ _fileTime.dwLowDateTime  := ULINT_TO_DWORD(_now AND 16#FFFFFFFF);
+ _fileTime.dwHighDateTime := ULINT_TO_DWORD(SHR(_now, 32));
+ _time                    := FILETIME_TO_SYSTEMTIME(_fileTime);
+
+  DateTime.Year        := _time.wYear;
+  DateTime.Month       := _time.wMonth;
+  DateTime.Day         := _time.wDay;
+  DateTime.Hour        := _time.wHour;
+  DateTime.Minute      := _time.wMinute;
+  DateTime.Second      := _time.wSecond;
+  DateTime.Millisecond := _time.wMilliseconds;
+
+  SysDepGetUtcTime := TRUE;</xhtml>
+                </ST>
+              </body>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+                  <InterfaceAsPlainText>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">/// System dependent reading of the current UTC date and time
+FUNCTION SysDepGetUtcTime : BOOL
+// -------------------------------------------------------------------------
+//  M2X Library System Dependencies
+// -------------------------------------------------------------------------
+//
+//  Object:      SysDepGetUtcTime
+//  Author:      Thorsten Brach
+//  Date:        2026-10-15
+//
+//  Description:
+//    System dependent reading of the current UTC date and time
+//
+//  Copyright:
+//    (C) 2026 Thorsten Brach. All rights reserved
+//             Licensed under the MIT License.
+//
+//  Disclaimer:
+//    This project is provided without any guarantee and can be used for
+//    private and commercial purposes. Any use is at the user's
+//    own risk and responsibility.
+//
+// -------------------------------------------------------------------------
+VAR_IN_OUT
+  /// Current UTC date and time
+  DateTime : SysDepDateTime;
+END_VAR
+VAR
+  /// System time in 100 ns since 1601-01-01 (UTC)
+ _now      : ULINT;
+  /// File time
+ _fileTime : T_FILETIME;
+  /// System time structure
+ _time     : TIMESTRUCT;
+END_VAR
+</xhtml>
+                  </InterfaceAsPlainText>
+                </data>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>377587e4-8920-43cf-b48d-83fa6a0df4f0</ObjectId>
+                </data>
+              </addData>
+            </pou>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/libraries" handleUnknown="implementation">
+            <Libraries>
+              <Library Name="#Tc2_Standard" Namespace="Tc2_Standard" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_Standard, * (Beckhoff Automation GmbH)" />
+              <Library Name="#Tc2_System" Namespace="Tc2_System" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_System, * (Beckhoff Automation GmbH)">
+                <Parameters>
+                  <Parameter Name="PARAM.TABLE_UPPER_BOUND" Value="15" />
+                  <Parameter Name="PARAM.STRING_LENGTH_EXP" Value="255" />
+                  <Parameter Name="PARAM.STRING_LENGTH_ADDRESS" Value="20" />
+                  <Parameter Name="PARAM.STRING_LENGTH_COMMENT" Value="255" />
+                  <Parameter Name="PARAM.STRING_LENGTH_OUTSTRING" Value="255" />
+                  <Parameter Name="PARAM.TABLE_SHOW_VALID_ITEMS" Value="FALSE" />
+                </Parameters>
+              </Library>
+              <Library Name="#Tc2_TcpIp" Namespace="Tc2_TcpIp" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_TcpIp, * (Beckhoff Automation GmbH)">
+                <Parameters>
+                  <Parameter Name="PARAM.TCPADS_MAXUDP_BUFFSIZE" Value="16#2000" />
+                  <Parameter Name="PARAM.TCPADS_TLS_HOSTNAME_SIZE" Value="255" />
+                  <Parameter Name="PARAM.TCPADS_TLS_CERTIFICATE_PATH_SIZE" Value="255" />
+                  <Parameter Name="PARAM.TCPADS_TLS_KEY_PASSWORD_SIZE" Value="255" />
+                  <Parameter Name="PARAM.TCPADS_TLS_PSK_IDENTITY_SIZE" Value="255" />
+                  <Parameter Name="PARAM.TCPADS_TLS_MAX_PSK_KEY_SIZE" Value="128" />
+                </Parameters>
+              </Library>
+              <Library Name="#Tc2_Utilities" Namespace="Tc2_Utilities" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc2_Utilities, * (Beckhoff Automation GmbH)">
+                <Parameters>
+                  <Parameter Name="PARAMETERLIST.NMAXLICENSES" Value="50" />
+                  <Parameter Name="PARAMETERLIST.NMAXLICENSEDEVICES" Value="16" />
+                  <Parameter Name="PARAMETERLIST.NMAXCPUCOUNT" Value="64" />
+                  <Parameter Name="PARAMETERLIST.CMAXCHARACTERS" Value="16#FFFFFFF0" />
+                  <Parameter Name="PARAMETERLIST.NMAXFILESONDONGLE" Value="20" />
+                  <Parameter Name="PARAMETERLIST.CMAXCSVFIELDVALUESIZE" Value="255" />
+                </Parameters>
+              </Library>
+              <Library Name="Tc3_IotBase, * (Beckhoff Automation GmbH)" Namespace="Tc3_IotBase" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false">
+                <Parameters>
+                  <Parameter Name="PARAMETERLIST.CMAXSIZEOFMQTTMESSAGE" Value="(100 * 1024)" />
+                  <Parameter Name="PARAMETERLIST.CMAXSIZEOFMQTTMESSAGEQUEUE" Value="(1000 * 1024)" />
+                  <Parameter Name="PARAMETERLIST.CMAXENTRIESINMQTTMESSAGEQUEUE" Value="1000" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTCLIENTCLIENTID" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTCLIENTHOSTNAME" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTCLIENTTOPICPREFIX" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTCLIENTUSERNAME" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTCLIENTUSERPWD" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTWILLTOPIC" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTT5CONTENTTYPE" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTT5AUTHMETHOD" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTT5AUTHDATA" Value="4096" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTT5SERVERREFERENCE" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTT5REASONSTRING" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CMAXMQTT5USERPROPS" Value="20" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSFILEPATHS" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSKEYFILE" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSKEYPWD" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSCIPHERS" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSPSKIDENTITY" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSPSKKEY" Value="64" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFMQTTTLSAZURESAS" Value="512" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPCONTENTTYPE" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPCLIENTHOSTNAME" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPTLSFILEPATHS" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPTLSKEYFILE" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPTLSKEYPWD" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPTLSCIPHERS" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPTLSPSKIDENTITY" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFHTTPTLSPSKKEY" Value="64" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFWEBSOCKETCLIENTHOSTNAME" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFWEBSOCKETURI" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFWEBSOCKETPROTOCOL" Value="256" />
+                  <Parameter Name="PARAMETERLIST.CSIZEOFWEBSOCKETORIGIN" Value="256" />
+                </Parameters>
+              </Library>
+              <Library Name="#Tc3_Module" Namespace="Tc3_Module" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="Tc3_Module, * (Beckhoff Automation GmbH)" />
+              <Library Name="#TcUnit" Namespace="TcUnit" HideWhenReferencedAsDependency="false" PublishSymbolsInContainer="false" SystemLibrary="false" LinkAllContent="false" DefaultResolution="TcUnit, * (www.tcunit.org)">
+                <Parameters>
+                  <Parameter Name="GVL_PARAM_TCUNIT.MAXNUMBEROFASSERTSFOREACHTESTSUITE" Value="2000" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.MAXNUMBEROFTESTSFOREACHTESTSUITE" Value="400" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.XUNITBUFFERSIZE" Value="4194304" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.XUNITENABLEPUBLISH" Value="TRUE" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.XUNITFILEPATH" Value="'D:\Projekte\SRCI\SRCI_PLC_TEST\tcunit_results.xml'" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.MAXNUMBEROFTESTSUITES" Value="1000" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.LOGEXTENDEDRESULTS" Value="TRUE" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.ADSLOGMESSAGEFIFORINGBUFFERSIZE" Value="2000" />
+                  <Parameter Name="GVL_PARAM_TCUNIT.TIMEBETWEENTESTSUITESEXECUTION" Value="TIME#0ms" />
+                </Parameters>
+              </Library>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+                  <ObjectId>bc250053-a22f-554d-ae9d-abfcee028d8e</ObjectId>
+                </data>
+              </addData>
+            </Libraries>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>6695c0ed-2535-53bc-b365-1fb92d520dd7</ObjectId>
+          </data>
+        </addData>
+      </resource>
+    </data>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="M2XLibrarySysDep_Tc" ObjectId="6695c0ed-2535-53bc-b365-1fb92d520dd7">
+          <Object Name="Library Manager" ObjectId="bc250053-a22f-554d-ae9d-abfcee028d8e" />
+          <Folder Name="M2XLibrarySysDep_Tc">
+            <Folder Name="Enumerations">
+              <Object Name="SysDepMqttQoS" ObjectId="5f705a6c-ac5d-4ff7-967b-f26762cfc19f" />
+            </Folder>
+            <Folder Name="Memory">
+              <Object Name="SysDepMemCmp" ObjectId="85479531-d990-489d-bea4-056aa3268705" />
+              <Object Name="SysDepMemCpy" ObjectId="961b76b6-f030-4fb0-bd70-63bd7f2b018b" />
+              <Object Name="SysDepMemSet" ObjectId="83b2a86d-46f1-41d9-a0df-9124beffa8e6" />
+            </Folder>
+            <Folder Name="Mqtt">
+              <Object Name="SysDepMqttClientFB" ObjectId="d8ed7fb2-c50a-48b2-8ede-6b21546619d0">
+                <Object Name="Publish" ObjectId="c7ba58d7-65da-45a9-b5d8-6aa307fb4669" />
+                <Object Name="Receive" ObjectId="0732a79d-3ba0-4b6e-bf55-7ca05b7388a8" />
+                <Object Name="SetLastWill" ObjectId="a044dec1-45a6-404c-8779-c9fdf5e640f6" />
+                <Object Name="Subscribe" ObjectId="b6a323f4-58c3-43e3-948a-5bac40402e4d" />
+                <Object Name="ToTcQoS" ObjectId="c4b3e2d2-18ac-46cb-93c2-684e4b6c48dd" />
+              </Object>
+            </Folder>
+            <Folder Name="Real">
+              <Object Name="SysDepIsValidLReal" ObjectId="495aa123-aa17-4b19-9fcb-696564973491" />
+            </Folder>
+            <Folder Name="Structures">
+              <Object Name="SysDepDateTime" ObjectId="8e0612ab-37aa-4fc2-8aa2-d7c123ebb4eb" />
+              <Object Name="SysDepMqttConfig" ObjectId="a1568006-b183-4a5b-9aa8-60dda0a37fef" />
+            </Folder>
+            <Folder Name="Time">
+              <Object Name="SysDepGetSeed" ObjectId="09b00219-5ee0-4ec0-aee8-72aff5a0da20" />
+              <Object Name="SysDepGetUtcTime" ObjectId="377587e4-8920-43cf-b48d-83fa6a0df4f0" />
+            </Folder>
+          </Folder>
+          <Object Name="MAIN" ObjectId="297cfea3-98cc-581f-9cbf-5a894e6a3c5e" />
+          <Object Name="PlcTask" ObjectId="b5b1e631-689a-4ed2-b042-93db8e5f58a7" />
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

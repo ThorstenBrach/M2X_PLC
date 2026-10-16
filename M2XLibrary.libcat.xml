@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LibraryCategories xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="LibraryCategories.xsd">
+    <LibraryCategory>
+        <Id>696A0BC3-3F1E-4A91-9FAD-EACB2AE84C0B</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>M2X</DefaultName>
+    </LibraryCategory>
+</LibraryCategories>

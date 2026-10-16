@@ -1,0 +1,1048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Rexroth" productName="ctrlX PLC Engineering" productVersion="ctrlX PLC 3.6.4" creationDateTime="2026-10-16T19:22:23.6544524" />
+  <contentHeader name="M2XLibrarySysDep_3S" version="0.0.0.1" modificationDateTime="2026-10-16T19:19:49.8834798" organization="Thorsten Brach" author="Thorsten Brach">
+    <Comment>M2XLibrarySysDep_3S</Comment>
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation>
+          <property name="Author" type="string">Thorsten Brach</property>
+          <property name="Company" type="string">Thorsten Brach</property>
+          <property name="DefaultNamespace" type="string">M2XLibrarySysDep_3S</property>
+          <property name="Description" type="string">M2XLibrarySysDep_3S</property>
+          <property name="Placeholder" type="string">M2XLibrarySysDep_3S</property>
+          <property name="Project" type="string">M2XLibrarySysDep_3S</property>
+          <property name="Title" type="string">M2XLibrarySysDep_3S</property>
+          <property name="Version" type="version">0.0.0.1</property>
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes>
+      <dataType name="SysDepMqttQoS">
+        <baseType>
+          <enum>
+            <values>
+              <value name="AT_MOST_ONCE" value="0" />
+              <value name="AT_LEAST_ONCE" value="1" />
+              <value name="EXACTLY_ONCE" value="2" />
+            </values>
+          </enum>
+        </baseType>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/enumvaluedocumentation" handleUnknown="implementation">
+            <EnumValueDocumentation>
+              <EnumValue>
+                <Name>AT_MOST_ONCE</Name>
+                <Documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> QoS 0</xhtml>
+                </Documentation>
+              </EnumValue>
+              <EnumValue>
+                <Name>AT_LEAST_ONCE</Name>
+                <Documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> QoS 1</xhtml>
+                </Documentation>
+              </EnumValue>
+              <EnumValue>
+                <Name>EXACTLY_ONCE</Name>
+                <Documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> QoS 2</xhtml>
+                </Documentation>
+              </EnumValue>
+            </EnumValueDocumentation>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+            <Attributes>
+              <Attribute Name="qualified_only" Value="" />
+            </Attributes>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>fc539107-7781-45b8-8930-99e3eadc8e01</ObjectId>
+          </data>
+        </addData>
+        <documentation>
+          <xhtml xmlns="http://www.w3.org/1999/xhtml"> MQTT quality of service</xhtml>
+        </documentation>
+      </dataType>
+      <dataType name="SysDepDateTime">
+        <baseType>
+          <struct>
+            <variable name="Year">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Year</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Month">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Month 1..12</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Day">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Day 1..31</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Hour">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Hour 0..23</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Minute">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Minute 0..59</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Second">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Second 0..59</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Millisecond">
+              <type>
+                <UINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Millisecond 0..999</xhtml>
+              </documentation>
+            </variable>
+          </struct>
+        </baseType>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>efec1689-18ae-4994-8519-48e8b0db58d5</ObjectId>
+          </data>
+        </addData>
+        <documentation>
+          <xhtml xmlns="http://www.w3.org/1999/xhtml"> Date and time (UTC) of the system dependencies</xhtml>
+        </documentation>
+      </dataType>
+      <dataType name="SysDepMqttConfig">
+        <baseType>
+          <struct>
+            <variable name="HostName">
+              <type>
+                <string length="255" />
+              </type>
+              <initialValue>
+                <simpleValue value="'127.0.0.1'" />
+              </initialValue>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Host name or IP address of the broker</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Port">
+              <type>
+                <UINT />
+              </type>
+              <initialValue>
+                <simpleValue value="1883" />
+              </initialValue>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Port of the broker</xhtml>
+              </documentation>
+            </variable>
+            <variable name="ClientId">
+              <type>
+                <string length="64" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client id (unique per connection)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="UserName">
+              <type>
+                <string length="64" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> User name (optional)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Password">
+              <type>
+                <string length="64" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Password (optional)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="KeepAlive">
+              <type>
+                <UINT />
+              </type>
+              <initialValue>
+                <simpleValue value="60" />
+              </initialValue>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Keep alive in seconds</xhtml>
+              </documentation>
+            </variable>
+            <variable name="TlsEnabled">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Use TLS</xhtml>
+              </documentation>
+            </variable>
+            <variable name="TlsCaFile">
+              <type>
+                <string length="255" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> CA file</xhtml>
+              </documentation>
+            </variable>
+            <variable name="TlsCertFile">
+              <type>
+                <string length="255" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client certificate file</xhtml>
+              </documentation>
+            </variable>
+            <variable name="TlsKeyFile">
+              <type>
+                <string length="255" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client key file</xhtml>
+              </documentation>
+            </variable>
+            <variable name="TlsKeyPassword">
+              <type>
+                <string length="64" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Password of the client key</xhtml>
+              </documentation>
+            </variable>
+            <variable name="TlsNoServerCertCheck">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Do not check the server certificate</xhtml>
+              </documentation>
+            </variable>
+          </struct>
+        </baseType>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>9f7e876a-0dcd-4a02-ac3a-dcc00f778f10</ObjectId>
+          </data>
+        </addData>
+        <documentation>
+          <xhtml xmlns="http://www.w3.org/1999/xhtml"> Configuration of the MQTT client</xhtml>
+        </documentation>
+      </dataType>
+    </dataTypes>
+    <pous>
+      <pou name="SysDepMemCmp" pouType="function">
+        <interface>
+          <returnType>
+            <DINT />
+          </returnType>
+          <inputVars>
+            <variable name="pData1">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to 1st memory area</xhtml>
+              </documentation>
+            </variable>
+            <variable name="pData2">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to 2nd memory area</xhtml>
+              </documentation>
+            </variable>
+            <variable name="DataLen">
+              <type>
+                <UDINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Amount of bytes to be compared</xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent implementation of the memory compare function (0 = equal)</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysDepMemCmp := SysMem.SysMemCmp(pBuffer1 := pData1, pBuffer2 := pData2, udiCount := DataLen);
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>177a40f0-1811-43a6-aced-19f55f272b13</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="SysDepMemCpy" pouType="function">
+        <interface>
+          <returnType>
+            <UDINT />
+          </returnType>
+          <inputVars>
+            <variable name="pDest">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to memory address to be copied to (target)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="pSrc">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to memory address to be copied from (source)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="DataLen">
+              <type>
+                <UDINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Amount of bytes to be copied</xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent implementation of the memory copy function</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysMem.SysMemCpy(pDest := pDest, pSrc := pSrc, udiCount := DataLen);
+  SysDepMemCpy := DataLen;
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>8891a5f1-a7dd-4ca5-9ad4-a6292eef5a3e</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="SysDepMemSet" pouType="function">
+        <interface>
+          <returnType>
+            <UDINT />
+          </returnType>
+          <inputVars>
+            <variable name="pDest">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to memory address to be filled (target)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Value">
+              <type>
+                <BYTE />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Value with which the memory is initialized</xhtml>
+              </documentation>
+            </variable>
+            <variable name="DataLen">
+              <type>
+                <UDINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Amount of bytes to be initialized</xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent implementation of the memory set function</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">  SysMem.SysMemSet(pDest := pDest, udiValue := BYTE_TO_UDINT(Value), udiCount := DataLen);
+  SysDepMemSet := DataLen;
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>368ee592-d018-4ed7-b378-fb4b1f7cdb31</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="SysDepIsValidLReal" pouType="function">
+        <interface>
+          <returnType>
+            <BOOL />
+          </returnType>
+          <inputVars>
+            <variable name="Value">
+              <type>
+                <LREAL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Value to check</xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <localVars>
+            <variable name="_pBits">
+              <type>
+                <pointer>
+                  <baseType>
+                    <LWORD />
+                  </baseType>
+                </pointer>
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Pointer to the bit pattern of the value</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_exponent">
+              <type>
+                <LWORD />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Exponent of the IEEE 754 double</xhtml>
+              </documentation>
+            </variable>
+          </localVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent check whether an LREAL is a finite number</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">  // IEEE 754: exponent 16#7FF = infinity or NaN
+ _pBits    := ADR(Value);
+ _exponent := SHR(_pBits^, 52) AND 16#7FF;
+
+  SysDepIsValidLReal := ( _exponent &lt;&gt; 16#7FF );
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>686cdd58-698d-4a68-915e-18bd37cfa979</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="SysDepGetSeed" pouType="function">
+        <interface>
+          <returnType>
+            <UDINT />
+          </returnType>
+          <localVars>
+            <variable name="_now">
+              <type>
+                <ULINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Real time clock in ms since 1970-01-01 (UTC)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_result">
+              <type>
+                <derived name="RTS_IEC_RESULT" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Result of the system call</xhtml>
+              </documentation>
+            </variable>
+          </localVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent seed for the random number generator</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> _result := SysTimeRtc.SysTimeRtcHighResGet(pTimestamp := ADR(_now));
+
+  SysDepGetSeed := ULINT_TO_UDINT(_now) XOR ULINT_TO_UDINT(SHR(_now, 32));
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>9ecae273-81b3-44d9-a1be-9ab0e90a6aac</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="SysDepGetUtcTime" pouType="function">
+        <interface>
+          <returnType>
+            <BOOL />
+          </returnType>
+          <inOutVars>
+            <variable name="DateTime">
+              <type>
+                <derived name="SysDepDateTime" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Current UTC date and time</xhtml>
+              </documentation>
+            </variable>
+          </inOutVars>
+          <localVars>
+            <variable name="_now">
+              <type>
+                <ULINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Real time clock in ms since 1970-01-01 (UTC)</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_result">
+              <type>
+                <derived name="RTS_IEC_RESULT" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Result of the system call</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_msOfDay">
+              <type>
+                <ULINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Milliseconds of the current day</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_z">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Days since 1970-01-01, shifted to 0000-03-01</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_era">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Era of 400 years</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_doe">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Day of the era 0..146096</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_yoe">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Year of the era 0..399</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_doy">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Day of the year, starting at March 1st</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_mp">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Month, starting at March = 0</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_month">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Month 1..12</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_year">
+              <type>
+                <DINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Year</xhtml>
+              </documentation>
+            </variable>
+          </localVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent reading of the current UTC date and time</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> _result := SysTimeRtc.SysTimeRtcHighResGet(pTimestamp := ADR(_now));
+  IF ( _result &lt;&gt; 0 )
+  THEN
+    RETURN;
+  END_IF
+
+ _msOfDay := _now MOD 86400000;
+
+  // Civil date from days since 1970-01-01 (H. Hinnant, days_from_civil inverse)
+ _z     := ULINT_TO_DINT(_now / 86400000) + 719468;
+ _era   := _z / 146097;
+ _doe   := _z - _era * 146097;
+ _yoe   := ( _doe - _doe / 1460 + _doe / 36524 - _doe / 146096 ) / 365;
+ _doy   := _doe - ( 365 * _yoe + _yoe / 4 - _yoe / 100 );
+ _mp    := ( 5 * _doy + 2 ) / 153;
+ _year  := _yoe + _era * 400;
+
+  IF ( _mp &lt; 10 )
+  THEN
+   _month := _mp + 3;
+  ELSE
+   _month := _mp - 9;
+  END_IF
+
+  IF ( _month &lt;= 2 )
+  THEN
+   _year := _year + 1;
+  END_IF
+
+  DateTime.Year        := DINT_TO_UINT(_year);
+  DateTime.Month       := DINT_TO_UINT(_month);
+  DateTime.Day         := DINT_TO_UINT(_doy - ( 153 * _mp + 2 ) / 5 + 1);
+  DateTime.Hour        := ULINT_TO_UINT(_msOfDay / 3600000);
+  DateTime.Minute      := ULINT_TO_UINT(( _msOfDay / 60000 ) MOD 60);
+  DateTime.Second      := ULINT_TO_UINT(( _msOfDay / 1000 ) MOD 60);
+  DateTime.Millisecond := ULINT_TO_UINT(_msOfDay MOD 1000);
+
+  SysDepGetUtcTime := TRUE;
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>f9d7ef33-dbe3-411a-b99a-4622af09b6e8</ObjectId>
+          </data>
+        </addData>
+      </pou>
+      <pou name="SysDepMqttClientFB" pouType="functionBlock">
+        <interface>
+          <inputVars>
+            <variable name="Enable">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Connect to the broker</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Config">
+              <type>
+                <derived name="SysDepMqttConfig" />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client configuration (read when Enable becomes TRUE)</xhtml>
+              </documentation>
+            </variable>
+          </inputVars>
+          <outputVars>
+            <variable name="Connected">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client is connected to the broker</xhtml>
+              </documentation>
+            </variable>
+            <variable name="Error">
+              <type>
+                <BOOL />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Client reports an error</xhtml>
+              </documentation>
+            </variable>
+            <variable name="ErrorId">
+              <type>
+                <UDINT />
+              </type>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Error code of the platform</xhtml>
+              </documentation>
+            </variable>
+          </outputVars>
+          <localVars constant="true">
+            <variable name="ERROR_NOT_IMPLEMENTED">
+              <type>
+                <UDINT />
+              </type>
+              <initialValue>
+                <simpleValue value="16#FFFF" />
+              </initialValue>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> Error code: no MQTT library bound yet</xhtml>
+              </documentation>
+            </variable>
+          </localVars>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> System dependent MQTT client (CODESYS: binding to the MQTT library still open)</xhtml>
+          </documentation>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">  // TODO: bind the MQTT library of the target (e.g. CODESYS IIoT Libraries SL)
+  Connected := FALSE;
+  Error     := Enable;
+
+  IF ( Enable )
+  THEN
+    ErrorId := ERROR_NOT_IMPLEMENTED;
+  ELSE
+    ErrorId := 0;
+  END_IF
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="Subscribe" ObjectId="4f2d1953-ddcf-4e07-8085-519f23c57362">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Topic">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Topic filter</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="QoS">
+                    <type>
+                      <derived name="SysDepMqttQoS" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Quality of service</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  Subscribe := FALSE;
+</xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="Publish" ObjectId="ed766778-137a-4984-b34c-f8b11de97022">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Topic">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Topic</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="pPayload">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="PayloadLength">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Length of the payload</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="QoS">
+                    <type>
+                      <derived name="SysDepMqttQoS" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Quality of service</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="RetainFlag">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Retain flag</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  Publish := FALSE;
+</xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="Receive" ObjectId="e4af3b84-a48e-4b75-b538-ada58494d394">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="pTopic">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Buffer for the topic (null-terminated string)</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="TopicSize">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Size of the topic buffer in bytes</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="pPayload">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Buffer for the payload</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="PayloadSize">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Size of the payload buffer in bytes</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <inOutVars>
+                  <variable name="PayloadLength">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Length of the received payload</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Oversized">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload did not fit into the buffer</xhtml>
+                    </documentation>
+                  </variable>
+                </inOutVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  Receive := FALSE;
+</xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="SetLastWill" ObjectId="a81266a3-800d-4166-9ece-5012595dba7a">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Topic">
+                    <type>
+                      <string length="255" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Topic of the last will</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="pPayload">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Payload of the last will</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="PayloadLength">
+                    <type>
+                      <UDINT />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Length of the payload</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="QoS">
+                    <type>
+                      <derived name="SysDepMqttQoS" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Quality of service</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="RetainFlag">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Retain flag</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">  SetLastWill := FALSE;
+</xhtml>
+                </ST>
+              </body>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>453cc4f8-1734-4712-afd0-26a96b6972ed</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="Library">
+          <Folder Name="Enumerations">
+            <Object Name="SysDepMqttQoS" ObjectId="fc539107-7781-45b8-8930-99e3eadc8e01" />
+          </Folder>
+          <Folder Name="Memory">
+            <Object Name="SysDepMemCmp" ObjectId="177a40f0-1811-43a6-aced-19f55f272b13" />
+            <Object Name="SysDepMemCpy" ObjectId="8891a5f1-a7dd-4ca5-9ad4-a6292eef5a3e" />
+            <Object Name="SysDepMemSet" ObjectId="368ee592-d018-4ed7-b378-fb4b1f7cdb31" />
+          </Folder>
+          <Folder Name="Mqtt">
+            <Object Name="SysDepMqttClientFB" ObjectId="453cc4f8-1734-4712-afd0-26a96b6972ed">
+              <Object Name="Subscribe" ObjectId="4f2d1953-ddcf-4e07-8085-519f23c57362" />
+              <Object Name="Publish" ObjectId="ed766778-137a-4984-b34c-f8b11de97022" />
+              <Object Name="Receive" ObjectId="e4af3b84-a48e-4b75-b538-ada58494d394" />
+              <Object Name="SetLastWill" ObjectId="a81266a3-800d-4166-9ece-5012595dba7a" />
+            </Object>
+          </Folder>
+          <Folder Name="Real">
+            <Object Name="SysDepIsValidLReal" ObjectId="686cdd58-698d-4a68-915e-18bd37cfa979" />
+          </Folder>
+          <Folder Name="Structures">
+            <Object Name="SysDepDateTime" ObjectId="efec1689-18ae-4994-8519-48e8b0db58d5" />
+            <Object Name="SysDepMqttConfig" ObjectId="9f7e876a-0dcd-4a02-ac3a-dcc00f778f10" />
+          </Folder>
+          <Folder Name="Time">
+            <Object Name="SysDepGetSeed" ObjectId="9ecae273-81b3-44d9-a1be-9ab0e90a6aac" />
+            <Object Name="SysDepGetUtcTime" ObjectId="f9d7ef33-dbe3-411a-b99a-4622af09b6e8" />
+          </Folder>
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

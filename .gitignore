@@ -1,0 +1,9 @@
+# Windows
+Thumbs.db
+desktop.ini
+
+# Lock and backup files of TwinCAT / CODESYS when a library is opened here
+*.~u
+*.bak
+*.orig
+*.opt

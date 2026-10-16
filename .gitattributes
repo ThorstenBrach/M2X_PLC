@@ -1,0 +1,10 @@
+# Text files: normalized in the repository, CRLF in the working copy (TwinCAT / CODESYS)
+*.st    text eol=crlf
+*.xml   text eol=crlf
+*.md    text eol=crlf
+*.svg   text eol=crlf
+LICENSE text eol=crlf
+
+# Libraries are binary: no line-end conversion, no text diffs
+*.library          binary
+*.compiled-library binary
