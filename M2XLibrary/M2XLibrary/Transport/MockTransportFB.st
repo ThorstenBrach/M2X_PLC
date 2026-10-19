@@ -72,7 +72,6 @@ END_VAR
    _subscriptionCount := 0;
    _count             := 0;
   END_IF
-END_FUNCTION_BLOCK
 
 PROPERTY Connected : BOOL
 /// Transport is connected
@@ -260,3 +259,5 @@ END_VAR
   Broker^.DeliverRetained(Client := THIS, Filter := Topic);
   Subscribe := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

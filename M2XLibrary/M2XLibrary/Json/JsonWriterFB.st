@@ -35,7 +35,6 @@ VAR
   /// A key was written, the value follows
  _afterKey : BOOL;
 END_VAR
-END_FUNCTION_BLOCK
 
 METHOD AddBool
 /// Writes "Name":true/false
@@ -435,3 +434,5 @@ END_VAR
   BeforeValue();
   AppendEscaped(Text := Value);
 END_METHOD
+
+END_FUNCTION_BLOCK

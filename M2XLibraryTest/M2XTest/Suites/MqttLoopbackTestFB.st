@@ -57,7 +57,6 @@ END_VAR
   END_IF
 
   MQTT_001_LhsLoopback();
-END_FUNCTION_BLOCK
 
 METHOD MQTT_001_LhsLoopback
 /// requestAccess and requestRelease over Mosquitto
@@ -142,3 +141,5 @@ END_VAR
    _finished := TRUE;
   END_IF
 END_METHOD
+
+END_FUNCTION_BLOCK

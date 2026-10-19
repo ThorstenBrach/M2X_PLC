@@ -43,7 +43,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD GetTransportOrder : BOOL
 /// Current transport order (FALSE if none or canceled)
@@ -290,3 +289,5 @@ END_VAR
   WriteRequestStates(PointIndex := 1);
   WriteErrors(PointIndex := 1);
 END_METHOD
+
+END_FUNCTION_BLOCK

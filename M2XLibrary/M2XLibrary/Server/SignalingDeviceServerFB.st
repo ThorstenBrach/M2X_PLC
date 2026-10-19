@@ -37,7 +37,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED CancelFinished : BOOL
 /// requestCancel removes the finished signal of the sender
@@ -266,3 +265,5 @@ END_VAR
   WriteErrors(PointIndex := 1);
  _writer.EndObject();
 END_METHOD
+
+END_FUNCTION_BLOCK

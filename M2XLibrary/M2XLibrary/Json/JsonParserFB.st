@@ -33,7 +33,6 @@ VAR
   /// Position of the last parse error (-1 = none)
  _errorPos   : DINT := -1;
 END_VAR
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE AllocToken : DINT
 /// Reserves a new token (-1 if the token array is full)
@@ -726,3 +725,5 @@ END_VAR
                                 pData2  := ADR(Text),
                                 DataLen := DINT_TO_UDINT(_tokenLen)) = 0 );
 END_METHOD
+
+END_FUNCTION_BLOCK

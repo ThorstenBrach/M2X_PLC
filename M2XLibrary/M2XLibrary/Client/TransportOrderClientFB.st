@@ -37,7 +37,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD CancelTransportOrder : STRING(64)
 /// Cancels a transport order; returns the request id
@@ -117,3 +116,5 @@ END_VAR
    _writer.EndObject();
   END_IF
 END_METHOD
+
+END_FUNCTION_BLOCK

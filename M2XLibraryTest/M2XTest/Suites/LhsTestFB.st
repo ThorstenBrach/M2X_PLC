@@ -63,7 +63,6 @@ END_VAR
   LHS_007_RequestFB();
   LHS_008_ContinueAfterFailure();
   LHS_009_ConnectionLoss();
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE AssertStatus
 /// Asserts the status of a request seen by a client
@@ -434,3 +433,5 @@ END_VAR
   TEST_FINISHED();
  _finished := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

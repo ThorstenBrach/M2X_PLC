@@ -15,6 +15,7 @@ M2X ("Machine to X") standardises the communication between mobile robots / flee
 - **JSON writer and parser in pure Structured Text** – no additional license, same behaviour on every PLC
 - **Neutralisation layer** (`M2XLibrarySysDep`): one portable main library, one small system dependent library per target
 - **Mock broker** for tests without network, **43 TcUnit tests** including a real MQTT loopback
+- **Example solution** with every interface in one scenario: an AMR picks a part, passes door, traffic light and elevator, delivers to a machine and charges – with a bilingual TwinCAT HMI
 
 ![Architecture](docs/images/architecture.svg)
 
@@ -68,12 +69,21 @@ sRequestId := fbStation.RequestAccess(LoadHandlingSessionId    := 'S-0815',
 
 The complete examples are in the [usage guide](docs/Usage.md).
 
+## Example solution
+
+`M2XLibraryExample/M2XLibraryExample.tnzip` is a complete TwinCAT solution (PLC + HMI) that uses **all six interfaces, as client and as server**: a fleet manager sends a transport order, the AMR picks a part at station A, passes door D1, traffic light T1 and elevator G1, delivers the part to machine B on the first floor and finally charges at charger C1. Everything runs in one PLC over the mock broker – no network and no MQTT license needed (MQTT can be switched on). The TwinCAT HMI shows the plan, the state of every participant and the live M2X event log, in German and English.
+
+![Example HMI](docs/images/example_hmi.png)
+
+Open it with *File → Open → Open Solution from Archive…*. Structure, sequence and test functions are described in [Example](docs/Example.md).
+
 ## Documentation
 
 | Document | Content |
 |---|---|
 | [M2X explained](docs/M2X.md) | what M2X is, how it works, all requests (commands) and states (events), errors, decisions of this library |
 | [Usage guide](docs/Usage.md) | setup, server and client examples, all interfaces, configuration, diagnosis, tests, troubleshooting |
+| [Example](docs/Example.md) | the example solution: AMR scenario with all interfaces, structure, sequence, HMI, test functions |
 | [Changelog](CHANGELOG.md) | versions (semantic versioning) |
 
 ## Software delivery
@@ -86,6 +96,7 @@ The libraries are delivered as **not compiled libraries** (visible source code) 
 | `M2XLibrarySysDep_Tc.library` / `.xml` | system dependencies for Beckhoff TwinCAT 3 |
 | `M2XLibrarySysDep_3S.library` / `.xml` | system dependencies for CODESYS |
 | `M2XLibrary.libcat.xml` | library category "M2X" (TwinCAT) |
+| `M2XLibraryExample/M2XLibraryExample.tnzip` | example solution (TwinCAT solution archive: PLC project + HMI project) |
 
 Both system dependent libraries are installed under the same name **`M2XLibrarySysDep`** – the main library references it, the target decides which one is installed. Installation: see the [usage guide](docs/Usage.md#2-setup).
 
@@ -93,7 +104,7 @@ Both system dependent libraries are installed under the same name **`M2XLibraryS
 
 ```
 ├─ README.md · CHANGELOG.md · LICENSE
-├─ docs/                          M2X explained, usage guide, diagrams
+├─ docs/                          M2X explained, usage guide, example, diagrams
 ├─ *.library · *.xml              libraries and PLCopen XML (see above)
 ├─ M2XLibrary/M2XLibrary/         main library
 │  ├─ Server/  Client/            interface FBs
@@ -103,7 +114,8 @@ Both system dependent libraries are installed under the same name **`M2XLibraryS
 │  └─ Structures/  Enumerations/  Interfaces/  Parameter/  Constants/
 ├─ M2XLibrarySysDep_Tc/           TwinCAT system dependencies
 ├─ M2XLibrarySysDep_3S/           CODESYS system dependencies
-└─ M2XLibraryTest/                TcUnit tests
+├─ M2XLibraryTest/                TcUnit tests
+└─ M2XLibraryExample/             example solution (TwinCAT solution archive .tnzip)
 ```
 
 ## Requirements
@@ -114,6 +126,7 @@ Both system dependent libraries are installed under the same name **`M2XLibraryS
 | MQTT client | TF6701 IoT Communication (`Tc3_IotBase`) – trial license for testing | CODESYS IIoT Libraries SL (MQTT Client SL) – not bound yet |
 | MQTT broker | e.g. Mosquitto | e.g. Mosquitto |
 | Tests | TcUnit 1.3 | – (test project only for TwinCAT so far) |
+| Example | TwinCAT 3.1.4024 or newer, TwinCAT HMI 14.2 for the HMI | – |
 
 ## Roadmap
 

@@ -31,7 +31,6 @@ VAR
   /// Number of published messages
  _published    : UDINT;
 END_VAR
-END_FUNCTION_BLOCK
 
 METHOD DeliverRetained
 /// Delivers the matching retained messages to a new subscription
@@ -215,3 +214,5 @@ END_VAR
     END_IF
   END_FOR
 END_METHOD
+
+END_FUNCTION_BLOCK

@@ -66,7 +66,6 @@ END_VAR
   ELV_001_GroupState();
   ELV_002_TwoMrTwoElevators();
   ELV_003_ChangeFloorWithoutTarget();
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE Cycle
 /// Calls all transports and endpoints
@@ -209,3 +208,5 @@ END_VAR
   END_FOR
   Cycle(Count := 1);
 END_METHOD
+
+END_FUNCTION_BLOCK

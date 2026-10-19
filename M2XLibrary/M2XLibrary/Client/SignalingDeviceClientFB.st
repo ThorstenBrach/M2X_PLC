@@ -37,7 +37,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD GetIndividualSignal : STRING(64)
 /// Individual signal shown for a request ('' = global signal applies)
@@ -114,3 +113,5 @@ END_VAR
  _params.SignalId  := SignalId;
   RequestSignal    := SendRequest(RequestType := RequestTypeEnum.REQUEST_SIGNAL, Description := '', Parameters := _params);
 END_METHOD
+
+END_FUNCTION_BLOCK

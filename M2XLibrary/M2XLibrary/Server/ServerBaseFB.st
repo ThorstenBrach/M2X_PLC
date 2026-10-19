@@ -170,7 +170,6 @@ END_VAR
       RequestCount := RequestCount + 1;
     END_IF
   END_FOR
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED AddEntry : DINT
 /// Adds an entry for _request (oldest final entry is replaced if the table is full); 0 = table full
@@ -1116,3 +1115,5 @@ END_VAR
   WriteRequestStates(PointIndex := 1);
   WriteErrors(PointIndex := 1);
 END_METHOD
+
+END_FUNCTION_BLOCK

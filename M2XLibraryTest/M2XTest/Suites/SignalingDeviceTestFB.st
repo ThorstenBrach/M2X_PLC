@@ -66,7 +66,6 @@ END_VAR
   SIG_001_RequestSignal();
   SIG_002_NotRequestable();
   SIG_003_CancelSignal();
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE Cycle
 /// Calls all transports and endpoints
@@ -166,3 +165,5 @@ END_VAR
   TEST_FINISHED();
  _finished := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

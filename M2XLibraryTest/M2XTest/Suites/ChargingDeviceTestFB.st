@@ -51,7 +51,6 @@ END_VAR
 
   CHG_001_ChargingSequence();
   CHG_002_StopWithoutStart();
-END_FUNCTION_BLOCK
 
 METHOD CHG_001_ChargingSequence
 /// access -> startCharge -> stopCharge -> release
@@ -138,3 +137,5 @@ END_VAR
   Cycle(Count := 1);
   Step := _client.GetRequestStatus(RequestId := _id);
 END_METHOD
+
+END_FUNCTION_BLOCK

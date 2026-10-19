@@ -41,7 +41,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD GetAssignedElevator : STRING(64)
 /// Elevator assigned to a requestElevator ('' = not yet assigned)
@@ -169,3 +168,5 @@ END_VAR
  _params.TargetFloor       := TargetFloor;
   RequestSessionStep := SendRequest(RequestType := RequestType, Description := '', Parameters := _params);
 END_METHOD
+
+END_FUNCTION_BLOCK

@@ -81,7 +81,6 @@ END_VAR
   THEN
    _configured := FALSE;
   END_IF
-END_FUNCTION_BLOCK
 
 METHOD Publish : BOOL
 /// Publishes a message
@@ -211,3 +210,5 @@ END_VAR
     ToTcQoS := TcIotMqttQos.AtMostOnceDelivery;
   END_CASE
 END_METHOD
+
+END_FUNCTION_BLOCK

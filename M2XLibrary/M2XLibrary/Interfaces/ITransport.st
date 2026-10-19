@@ -21,7 +21,6 @@ INTERFACE ITransport
 //    own risk and responsibility.
 //
 // -------------------------------------------------------------------------
-END_INTERFACE
 
 PROPERTY Connected : BOOL
 /// Transport is connected
@@ -74,3 +73,5 @@ VAR_INPUT
   Topic : STRING(255);
 END_VAR
 END_METHOD
+
+END_INTERFACE

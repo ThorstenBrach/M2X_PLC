@@ -48,7 +48,6 @@ END_VAR
   JSON_011_Timestamp();
   JSON_012_EnumConvert();
   JSON_013_ParameterRoundTrip();
-END_FUNCTION_BLOCK
 
 METHOD JSON_001_WriterObject
 /// Writer: object with all value types
@@ -447,3 +446,5 @@ END_VAR
   TEST_FINISHED();
  _finished := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

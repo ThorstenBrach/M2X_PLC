@@ -33,7 +33,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED ParseStateContent
 /// State of the load handling station
@@ -107,3 +106,5 @@ END_VAR
  _params.LoadHandlingPointId   := LoadHandlingPointId;
   RequestSessionStep := SendRequest(RequestType := RequestType, Description := '', Parameters := _params);
 END_METHOD
+
+END_FUNCTION_BLOCK

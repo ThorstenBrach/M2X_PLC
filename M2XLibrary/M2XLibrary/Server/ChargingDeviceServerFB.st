@@ -39,7 +39,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED CheckRequest : STRING(64)
 /// Checks the charging sequence
@@ -262,3 +261,5 @@ END_VAR
   WriteErrors(PointIndex := 1);
  _writer.EndObject();
 END_METHOD
+
+END_FUNCTION_BLOCK

@@ -33,7 +33,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED ParseRequestStateExtras
 /// chargingProcess of an own request
@@ -86,3 +85,5 @@ END_VAR
  _params.ChargingSessionId := ChargingSessionId;
   RequestCharging := SendRequest(RequestType := RequestType, Description := '', Parameters := _params);
 END_METHOD
+
+END_FUNCTION_BLOCK

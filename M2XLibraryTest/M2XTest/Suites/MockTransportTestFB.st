@@ -47,7 +47,6 @@ END_VAR
   MOCK_003_Retained();
   MOCK_004_LastWill();
   MOCK_005_QueueOverflow();
-END_FUNCTION_BLOCK
 
 METHOD MOCK_001_PublishSubscribe
 /// Message is delivered to a matching subscription only
@@ -190,3 +189,5 @@ END_VAR
   TEST_FINISHED();
  _finished := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

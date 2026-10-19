@@ -60,7 +60,6 @@ END_VAR
   DOOR_001_TransitAndRelease();
   DOOR_002_ReleaseWithoutTransit();
   DOOR_003_WrongDoorId();
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE Cycle
 /// Calls all transports and endpoints
@@ -175,3 +174,5 @@ END_VAR
   TEST_FINISHED();
  _finished := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

@@ -42,7 +42,6 @@ END_VAR
  _client(Enable := Enable, Config := Config);
   Error   := _client.Error;
   ErrorId := _client.ErrorId;
-END_FUNCTION_BLOCK
 
 PROPERTY Connected : BOOL
 /// Transport is connected
@@ -113,3 +112,5 @@ VAR_INPUT
 END_VAR
   Subscribe := _client.Subscribe(Topic := Topic, QoS := QoS);
 END_METHOD
+
+END_FUNCTION_BLOCK

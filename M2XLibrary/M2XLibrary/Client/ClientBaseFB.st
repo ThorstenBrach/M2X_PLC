@@ -113,7 +113,6 @@ END_VAR
     END_IF
     HandleMessage();
   END_FOR
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED ClearParameters
 /// Clears the request parameters used by the convenience methods
@@ -513,3 +512,5 @@ VAR_INPUT
   RequestType : RequestTypeEnum;
 END_VAR
 END_METHOD
+
+END_FUNCTION_BLOCK

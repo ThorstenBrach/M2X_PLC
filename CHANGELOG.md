@@ -18,6 +18,14 @@ As long as the version starts with **0.**, the API is not stable yet – also be
 
 ## [Unreleased]
 
+### Added
+- **Example solution** `M2XLibraryExample/M2XLibraryExample.tnzip` (TwinCAT solution archive, PLC + HMI): an AMR picks a part at station A, passes door D1, traffic light T1 and elevator G1, delivers it to machine B and charges at charger C1
+  - all six interfaces as client and server in one PLC, over the mock broker or MQTT (`GVL_Demo.bUseMqtt`)
+  - fleet manager with transport orders, cancel and elevator manual mode; requests for factsheets of all devices
+  - helpers `FB_ServerApp` (server side), `FB_M2XStep` (client side) and `FB_DemoTransport` (mock broker or MQTT)
+  - TwinCAT HMI in German and English: plan, state of all participants, live M2X event log, test functions (fault at machine B, acknowledge, manual mode, automatic orders, AMR reset)
+- **Documentation:** [Example](docs/Example.md) with structure, sequence, HMI and screenshots; README and repository structure updated
+
 ### Planned
 - MQTT client in `M2XLibrarySysDep_3S` (CODESYS IIoT Libraries) and tests of the main library on CODESYS
 - factsheet data types per interface

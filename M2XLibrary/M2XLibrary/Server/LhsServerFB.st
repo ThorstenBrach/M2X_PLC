@@ -37,7 +37,6 @@ END_VAR
   END_IF
 
   SUPER^();
-END_FUNCTION_BLOCK
 
 METHOD PROTECTED CheckRequest : STRING(64)
 /// Checks the load handling sequence
@@ -337,3 +336,5 @@ END_VAR
   END_FOR
  _writer.EndArray();
 END_METHOD
+
+END_FUNCTION_BLOCK

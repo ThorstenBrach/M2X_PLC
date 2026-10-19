@@ -59,7 +59,6 @@ END_VAR
   TO_002_UpdateOrder();
   TO_003_StaleUpdate();
   TO_004_CancelOrder();
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE Cycle
 /// Calls all transports and endpoints
@@ -215,3 +214,5 @@ END_VAR
   TEST_FINISHED();
  _finished := TRUE;
 END_METHOD
+
+END_FUNCTION_BLOCK

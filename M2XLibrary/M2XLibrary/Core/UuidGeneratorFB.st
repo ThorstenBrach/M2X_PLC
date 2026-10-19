@@ -25,7 +25,6 @@ VAR
   /// State of the xorshift generator
  _state : UDINT;
 END_VAR
-END_FUNCTION_BLOCK
 
 METHOD PRIVATE HexDigit : BYTE
 /// ASCII code of a hex digit
@@ -109,3 +108,5 @@ END_VAR
 
   NewUuid := _result;
 END_METHOD
+
+END_FUNCTION_BLOCK
